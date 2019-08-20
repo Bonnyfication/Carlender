@@ -407,6 +407,7 @@
     <Content Include="App_Plugins\CharLimit\charlimit.controller.js" />
     <Content Include="Models\Generated\PetaPoco.Generator.ttinclude" />
     <Content Include="Models\Generated\PetaPoco.Core.ttinclude" />
+    <Content Include="Database\Umbraco_DB.bak" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
