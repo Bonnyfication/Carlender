@@ -250,17 +250,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Plugins\Artikelselektor\artikelselektor.controller.js" />
-    <Content Include="App_Plugins\Artikelselektor\artikelselektor.editor.html" />
-    <Content Include="App_Plugins\GoogleMaps\googlemaps.editor.html" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
-    <Content Include="App_Plugins\shopSection\artikel.resource.js" />
-    <Content Include="App_Plugins\shopSection\backoffice\artikelTree\delete.controller.js" />
-    <Content Include="App_Plugins\shopSection\backoffice\artikelTree\delete.html" />
-    <Content Include="App_Plugins\shopSection\backoffice\artikelTree\edit.html" />
-    <Content Include="App_Plugins\shopSection\backoffice\artikelTree\edit.controller.js" />
     <Content Include="config\grid.editors.config.js" />
     <Content Include="config\Lang\cs-CZ.user.xml" />
     <Content Include="config\Lang\da-DK.user.xml" />
@@ -280,15 +272,10 @@
     <Content Include="config\Lang\ru-RU.user.xml" />
     <Content Include="config\Lang\sv-SE.user.xml" />
     <Content Include="config\Lang\zh-CN.user.xml" />
-    <Content Include="css\allinone_carousel.css" />
-    <Content Include="css\blue.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
-    <Content Include="css\fwslider.css" />
-    <Content Include="css\green.css" />
     <Content Include="css\jquery.fancybox.css" />
-    <Content Include="css\owl.carousel.css" />
-    <Content Include="css\violet.css" />
+    <Content Include="css\style.css" />
     <Content Include="fonts\css\font-awesome.css" />
     <Content Include="fonts\css\font-awesome.min.css" />
     <Content Include="fonts\fonts\fontawesome-webfont.svg" />
@@ -312,6 +299,7 @@
     <Content Include="images\fancy_left.png" />
     <Content Include="images\fancy_right.png" />
     <Content Include="images\logo.png" />
+    <Content Include="images\redmust.jpg" />
     <Content Include="images\right_arrow.png" />
     <Content Include="images\s1.jpg" />
     <Content Include="images\s2.jpg" />
@@ -329,12 +317,10 @@
     <Content Include="images\slider_pic4.jpg" />
     <Content Include="images\slider_pic5.jpg" />
     <Content Include="images\Thumbs.db" />
-    <Content Include="js\allinone_carousel.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\css3-mediaqueries.js" />
     <Content Include="js\fliplightbox.min.js" />
-    <Content Include="js\fwslider.js" />
     <Content Include="js\jquery-ui-1.8.16.custom.min.js" />
     <Content Include="js\jquery-ui.min.js" />
     <Content Include="js\jquery.easing.min.js" />
@@ -344,7 +330,6 @@
     <Content Include="js\jquery.ui.touch-punch.min.js" />
     <Content Include="js\menu.js" />
     <Content Include="js\modernizr.custom.js" />
-    <Content Include="js\owl.carousel.js" />
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Models\Generated\Database.tt">
@@ -354,15 +339,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\ArtikelApiController.cs" />
-    <Compile Include="Handler\getArtikel.ashx.cs">
-      <DependentUpon>getArtikel.ashx</DependentUpon>
-    </Compile>
-    <Compile Include="Klassen\ArtikelTreeController.cs" />
-    <Compile Include="Klassen\Shop.cs" />
-    <Compile Include="Klassen\ShopSection.cs" />
     <Compile Include="Klassen\umbStartup.cs" />
-    <Compile Include="Models\Artikel.cs" />
     <Compile Include="Models\Generated\Database.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -428,13 +405,8 @@
     <Content Include="App_Plugins\CharLimit\charlimit.editor.html" />
     <Content Include="App_Plugins\CharLimit\package.manifest" />
     <Content Include="App_Plugins\CharLimit\charlimit.controller.js" />
-    <Content Include="App_Plugins\GoogleMaps\googlemaps.controller.js" />
-    <Content Include="App_Plugins\GoogleMaps\package.manifest" />
     <Content Include="Models\Generated\PetaPoco.Generator.ttinclude" />
     <Content Include="Models\Generated\PetaPoco.Core.ttinclude" />
-    <Content Include="App_Plugins\shopSection\package.manifest" />
-    <Content Include="Handler\getArtikel.ashx" />
-    <Content Include="App_Plugins\Artikelselektor\package.manifest" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />

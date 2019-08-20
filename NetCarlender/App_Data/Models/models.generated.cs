@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9986a5afa9f3689b")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "91afc820c246e5d9")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -103,12 +103,12 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Google Maps: Display google maps
+		/// Inhalt
 		///</summary>
-		[ImplementPropertyType("googleMaps")]
-		public Newtonsoft.Json.Linq.JToken GoogleMaps
+		[ImplementPropertyType("inhalt")]
+		public Newtonsoft.Json.Linq.JToken Inhalt
 		{
-			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("googleMaps"); }
+			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("inhalt"); }
 		}
 
 		///<summary>
@@ -118,15 +118,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public string SeitentitelAnhang
 		{
 			get { return this.GetPropertyValue<string>("seitentitelAnhang"); }
-		}
-
-		///<summary>
-		/// SliderTyp
-		///</summary>
-		[ImplementPropertyType("sliderTyp")]
-		public IPublishedContent SliderTyp
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("sliderTyp"); }
 		}
 	}
 
@@ -171,111 +162,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public string SeitentitelAnhang
 		{
 			get { return this.GetPropertyValue<string>("seitentitelAnhang"); }
-		}
-	}
-
-	/// <summary>Slider Ordner</summary>
-	[PublishedContentModel("sliderOrdner")]
-	public partial class SliderOrdner : PublishedContentModel
-	{
-#pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "sliderOrdner";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-#pragma warning restore 0109
-
-		public SliderOrdner(IPublishedContent content)
-			: base(content)
-		{ }
-
-#pragma warning disable 0109 // new is redundant
-		public new static PublishedContentType GetModelContentType()
-		{
-			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-		}
-#pragma warning restore 0109
-
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SliderOrdner, TValue>> selector)
-		{
-			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-	}
-
-	/// <summary>Slider</summary>
-	[PublishedContentModel("slider")]
-	public partial class Slider : PublishedContentModel
-	{
-#pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "slider";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-#pragma warning restore 0109
-
-		public Slider(IPublishedContent content)
-			: base(content)
-		{ }
-
-#pragma warning disable 0109 // new is redundant
-		public new static PublishedContentType GetModelContentType()
-		{
-			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-		}
-#pragma warning restore 0109
-
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Slider, TValue>> selector)
-		{
-			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-	}
-
-	/// <summary>Slide</summary>
-	[PublishedContentModel("slide")]
-	public partial class Slide : PublishedContentModel
-	{
-#pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "slide";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-#pragma warning restore 0109
-
-		public Slide(IPublishedContent content)
-			: base(content)
-		{ }
-
-#pragma warning disable 0109 // new is redundant
-		public new static PublishedContentType GetModelContentType()
-		{
-			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-		}
-#pragma warning restore 0109
-
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Slide, TValue>> selector)
-		{
-			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// Beschreibung
-		///</summary>
-		[ImplementPropertyType("beschreibung")]
-		public string Beschreibung
-		{
-			get { return this.GetPropertyValue<string>("beschreibung"); }
-		}
-
-		///<summary>
-		/// Bild
-		///</summary>
-		[ImplementPropertyType("bild")]
-		public IPublishedContent Bild
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("bild"); }
-		}
-
-		///<summary>
-		/// Titel
-		///</summary>
-		[ImplementPropertyType("titel")]
-		public string Titel
-		{
-			get { return this.GetPropertyValue<string>("titel"); }
 		}
 	}
 
