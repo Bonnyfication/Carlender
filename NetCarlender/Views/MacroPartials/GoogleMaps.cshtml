@@ -1,0 +1,16 @@
+﻿@using Newtonsoft.Json
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+
+@{
+    dynamic anzeige = JsonConvert.DeserializeObject(Model.MacroParameters["Maps"].ToString().Replace("&quot;", "\""));
+}
+
+<p>@anzeige.latitude @anzeige.longitude</p>
+
+
+@{
+    string link = "http://maps.google.com/maps?q="+ anzeige.latitude.ToString() +","+ anzeige.longitude.ToString() + "&z=15&output=embed";
+}
+
+<iframe src="@link" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>

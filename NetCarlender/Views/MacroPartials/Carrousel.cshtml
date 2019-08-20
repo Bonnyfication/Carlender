@@ -1,0 +1,20 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+<!-- start banner -->
+<div id="bannerBg">
+<div id="containingDiv">
+            <div id="allinone_carousel_charming">
+            	<div class="myloader"></div>
+                <!-- CONTENT -->
+                <ul class="allinone_carousel_list">
+                    
+                    @foreach(string picId in Model.MacroParameters["Bilder"].ToString().Split(','))
+                    {
+                        <li><img src="@Umbraco.Media(picId).GetCropUrl("umbracoFile","Carousel")" alt="" class="img-responsive"/></li>
+                    }
+                    
+                </ul>    
+          </div>
+</div>
+</div>
+ <!-- end banner -->

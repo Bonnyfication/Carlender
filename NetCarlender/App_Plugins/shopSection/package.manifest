@@ -1,0 +1,7 @@
+﻿{
+	javascript: [
+		"~/App_Plugins/shopSection/backoffice/artikelTree/edit.controller.js",
+		"~/App_Plugins/shopSection/backoffice/artikelTree/delete.controller.js",
+		"~/App_Plugins/shopSection/artikel.resource.js"
+	]
+}
