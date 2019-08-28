@@ -4,14 +4,20 @@
 @using Umbraco.Core.Services;
 @{
 	Layout = "Master.cshtml";
+
+    var idImage = CurrentPage.headerImage;
+    var headerSource = idImage.Url;
 }
 
-	<div id="header" class="bg bg1" data-selector=".bg.bg1, .bg.bg2" style="">
+
+
+
+	<div id="header" class="bg bg1" data-selector=".bg.bg1, .bg.bg2" style="background-image: url('@headerSource')">
     		<div class="container">
-    			<h3 class="editContent" data-selector=".editContent" style=""><span class="green">C</span>ar<span class="green">L</span>en<span class="green">D</span>er</h3>
-    			<p class="editContent slogan" data-selector=".editContent" style="">Alle Autotreffen im Überblick!</p>
+    			<h3 style=""><span class="green">C</span>ar<span class="green">L</span>en<span class="green">D</span>er</h3>
+    			<p style="">Alle Autotreffen im Überblick!</p>
 				<div class="text-center">
-					<a href="#" class="btn btn-default-green" data-selector="a.btn, button.btn" style="">Los gehts</a>
+					<a href="#" class="btn btn-default-green" data-selector="a.btn, button.btn">Los gehts</a>
 				</div>
    				<div id="scrolldown">
   					<div class="mouse">
@@ -19,7 +25,7 @@
   					</div>
 				</div>
     		</div>
-    	</div>
+    </div>
 
 
      <div class="main_bg">

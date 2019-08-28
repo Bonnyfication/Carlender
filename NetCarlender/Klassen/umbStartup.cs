@@ -5,7 +5,7 @@ using System.Web;
 using Umbraco.Core;
 using Umbraco.Core.Services;
 
-namespace NetWebkonzepteUmbreco.Klassen
+namespace NetCarlender.Klassen
 {
     public class umbStartup : IApplicationEventHandler
     {

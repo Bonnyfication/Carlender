@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "91afc820c246e5d9")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "6163c1b87530062a")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -119,12 +119,21 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Inhalt
+		/// Grid Content: Fill the Website with content using the grid layout
 		///</summary>
-		[ImplementPropertyType("inhalt")]
-		public Newtonsoft.Json.Linq.JToken Inhalt
+		[ImplementPropertyType("gridContent")]
+		public Newtonsoft.Json.Linq.JToken GridContent
 		{
-			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("inhalt"); }
+			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("gridContent"); }
+		}
+
+		///<summary>
+		/// Header Image: Pick an Image to display as header
+		///</summary>
+		[ImplementPropertyType("headerImage")]
+		public IPublishedContent HeaderImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("headerImage"); }
 		}
 
 		///<summary>

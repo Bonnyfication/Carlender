@@ -591,7 +591,10 @@ header {
 */
 
 #header {
-	background-image: url("../images/redmust.jpg");
+	/*
+		THIS IS SET IN HTML TO BE DYNAMIC
+		background-image: url("../images/redmust.jpg");
+	*/
 	background-size: cover;
 	background-repeat: no-repeat;
 	padding: 200px 0;
