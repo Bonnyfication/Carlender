@@ -16,8 +16,9 @@ using umbraco;
 
 namespace NetWebkonzepteUmbreco.Trees
 {
-    [umbraco.businesslogic.Tree("showSection", "showTree", "Show")]
+    //[umbraco.businesslogic.Tree("showSection", "showTree", "Show")]
     [PluginController("showSection")]
+    [Umbraco.Web.Trees.Tree("showSection", "showTree", "Show", iconClosed: "icon-car")]
     public class ShowTreeController : TreeController
     {
 

@@ -15,7 +15,7 @@ namespace NetCarlender.Models
         public string Beschreibung { get; set; }
         public string Ort { get; set; }
         public string Plz { get; set; }
-        public string Straße { get; set; }
+        public string Strasse { get; set; }
         public int Image { get; set; }
         public string Facebook { get; set; }
     }

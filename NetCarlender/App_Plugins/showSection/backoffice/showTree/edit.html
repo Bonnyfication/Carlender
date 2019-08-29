@@ -1,0 +1,70 @@
+﻿<form name="artikelForm" ng-controller="showSection.editController" ng-show="loaded" ng-submit="save(show)" val-form-manager>
+    <umb-panel>
+        <umb-header>
+            <div class="span7">
+                <umb-content-name placeholder="@placeholders_entername" ng-model="show.Titel" />
+            </div>
+            <div class="span5">
+                <div class="btn-toolbar pull-right umb-btn-toolbar">
+                    <umg-otions-menu ng-show="currentNode" current-node="currentNode" current-section="{{CurrentSection}}">
+                    </umg-otions-menu>
+                </div>
+            </div>
+        </umb-header>
+        <div class="umb-panel-body umb-scrollable row-fluid">
+            <div class="tab-content form-horizontal" style="padding-bottom: 90px">
+                <div class="umb-pane">
+
+                    <umb-control-group label="Titel" description="Show-Artikel">
+                        <input type="text" maxlength="254" class="umb-editor umb-textstring" ng-model="show.Titel" required />
+                    </umb-control-group>
+
+                    <umb-control-group label="Bild" description="Which image?">
+                        <div ng-if="!node">
+                            <a href="" ng-click="openMediaPicker()" prevent-default class="btn btn-info btn-mini">Select</a>
+                            <label>{{selectedImageId}}</label>
+                            <img src="{{selectedImageUrl}}" style="flex: 1 1 50px; max-width: 150px; min-width: 100px; min-height: 100px;"/>
+                        </div>
+                        <umb-overlay ng-if="mediaPickerOverlay.show" model="mediaPickerOverlay" position="right" view="mediaPickerOverlay.view">
+                        </umb-overlay>
+                    </umb-control-group>
+
+
+
+                    <umb-control-group label="Beschreibung" description="Show-Beschreibung">
+                        <input type="text" class="umb-editor umb-textstring" ng-model="show.Beschreibung" required />
+                    </umb-control-group>
+
+                    <umb-control-group label="Datum" description="Show-Datum">
+                        <!--<input type="datetime" class="umb-editor umb-textstring" ng-model="show.Datum" required />-->
+                        <umb-editor model="datepicker"></umb-editor>
+                    </umb-control-group>
+
+                    <umb-control-group label="Ort" description="Show-Ort">
+                        <input type="text" maxlength="254" class="umb-editor umb-textstring" ng-model="show.Ort" required />
+                    </umb-control-group>
+
+                    <umb-control-group label="PLZ" description="Show-PLZ">
+                        <input type="text" maxlength="5" class="umb-editor umb-textstring" ng-model="show.Plz" required />
+                    </umb-control-group>
+
+                    <umb-control-group label="Strasse" description="Show-Strasse">
+                        <input type="text" maxlength="254" class="umb-editor umb-textstring" ng-model="show.Strasse" required />
+                    </umb-control-group>
+
+                    <umb-control-group label="Facebook-Link" description="Show-Facebook">
+                        <input type="text" class="umb-editor umb-textstring" ng-model="show.Facebook" />
+                    </umb-control-group>
+
+                    <div class="umb-tab-buttons" detect-fold>
+                        <div class="btn-group">
+                            <button type="submit" data-hotkey="ctrl+s" class="btn btn-success">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </umb-panel>
+</form>
