@@ -1,4 +1,4 @@
-﻿<form name="artikelForm" ng-controller="showSection.editController" ng-show="loaded" ng-submit="save(show)" val-form-manager>
+﻿<form name="carshowForm" ng-controller="showSection.editController" ng-show="loaded" ng-submit="save(show)" val-form-manager>
     <umb-panel>
         <umb-header>
             <div class="span7">
@@ -23,21 +23,23 @@
                         <div ng-if="!node">
                             <a href="" ng-click="openMediaPicker()" prevent-default class="btn btn-info btn-mini">Select</a>
                             <label>{{selectedImageId}}</label>
-                            <img src="{{selectedImageUrl}}" style="flex: 1 1 50px; max-width: 150px; min-width: 100px; min-height: 100px;"/>
+                            <img src="{{selectedImageUrl}}" style="flex: 1 1 50px; max-width: 150px; min-width: 100px; min-height: 100px;" />
                         </div>
                         <umb-overlay ng-if="mediaPickerOverlay.show" model="mediaPickerOverlay" position="right" view="mediaPickerOverlay.view">
                         </umb-overlay>
                     </umb-control-group>
 
 
-
                     <umb-control-group label="Beschreibung" description="Show-Beschreibung">
-                        <input type="text" class="umb-editor umb-textstring" ng-model="show.Beschreibung" required />
+                        <umb-editor model="richEditor"></umb-editor>
                     </umb-control-group>
 
+
+
                     <umb-control-group label="Datum" description="Show-Datum">
-                        <!--<input type="datetime" class="umb-editor umb-textstring" ng-model="show.Datum" required />-->
-                        <umb-editor model="datepicker"></umb-editor>
+                        <umb-property property="StartTime.model">
+                            <umb-editor model="StartTime.model" class="ng-pristine"></umb-editor>
+                        </umb-property>
                     </umb-control-group>
 
                     <umb-control-group label="Ort" description="Show-Ort">
