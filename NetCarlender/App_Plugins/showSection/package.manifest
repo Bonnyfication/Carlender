@@ -1,6 +1,7 @@
 ﻿﻿{
 	javascript: [
 		"~/App_Plugins/showSection/backoffice/showTree/edit.controller.js",
+		"~/App_Plugins/showSection/backoffice/showTree/delete.controller.js",
 		"~/App_Plugins/showSection/show.resource.js"
 	]
 }

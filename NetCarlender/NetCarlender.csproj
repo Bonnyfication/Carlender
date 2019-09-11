@@ -253,6 +253,8 @@
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
+    <Content Include="App_Plugins\showSection\backoffice\showTree\delete.controller.js" />
+    <Content Include="App_Plugins\showSection\backoffice\showTree\delete.html" />
     <Content Include="App_Plugins\showSection\show.resource.js" />
     <Content Include="App_Plugins\showSection\backoffice\showTree\edit.html" />
     <Content Include="App_Plugins\showSection\backoffice\showTree\edit.controller.js" />

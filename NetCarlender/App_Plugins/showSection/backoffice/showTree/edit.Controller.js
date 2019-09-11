@@ -12,40 +12,18 @@
         showResource.getById($routeParams.id).then(function (response) {
             $scope.show = response.data;
 
-            //$scope.datepicker.value
-            //$scope.StartTime.value = $scope.show.Datum;
+            // SET DATE
+            $scope.datepicker.value = $scope.show.Datum;
+            $scope.convertedDate = $scope.show.Datum.replace("T", " ");
+            $('#carshowdate').val($scope.convertedDate);
+            $('#carshowdate').change();
 
-
-            $scope.StartTime =  {
-               
-                model: {
-                    editor: "Umbraco.DateTime",
-                    label: 'Start Time',
-                    description: 'Enter the date/time the meeting will start.',
-                    hideLabel: false,
-                    view: "datepicker",
-                    alias: 'StartTime',
-                    value: $scope.show.Datum,
-                    required: true,
-                    validation: {
-                        mandatory: true,
-                        pattern: ""
-                    },
-                    config: {
-                        format: "YYYY-MM-DD HH:mm:ss",
-                        pickDate: true,
-                        pickTime: true,
-                        useSeconds: false
-                    }
-                }
-                
-            };
-
-
-
-
-
+            // SET DESCRIPTION
             $scope.richEditor.value = $scope.show.Beschreibung;
+
+            // SET IMAGE
+            $scope.selectedImageUrl = $scope.show.Imagepath;
+            
 
             $scope.loaded = true;
         });
@@ -58,67 +36,52 @@
         // GET BESCHREIBUNG
         $scope.show.Beschreibung = $scope.richEditor.value;
 
-        showResource.save(show).then(function (response) {
-            $scope.show = response.data;
-            notificationsService.success("Success", show.Titel + " " + " has been saved.");
+        if ($scope.datepicker.value == null || $scope.show.Image == 'undefined') {
+            notificationsService.error("Failed", show.Titel + " " + " has not been saved.");
+            notificationsService.error("Failed", "Please fill mising data!");
+        } else {
+            showResource.save(show).then(function (response) {
+                $scope.show = response.data;
+                notificationsService.success("Success", show.Titel + " " + " has been saved.");
 
-            // Confirm object isnt dirty anymore
-            $scope.carshowForm.$dirty = false;
 
-            navigationService.syncTree({ tree: 'showTree', path: [-1, $scope.id], forceReload: true }).then(function
-                (syncArgs) {
-                navigationService.reloadNode(syncArgs.node);
+                // Confirm object isnt dirty anymore
+                $scope.carshowForm.$dirty = false;
+
+                navigationService.syncTree({ tree: 'showTree', path: [-1, $scope.id], forceReload: true }).then(function
+                    (syncArgs) {
+                    navigationService.reloadNode(syncArgs.node);
+                });
             });
-        });
+        }
+        
+
+
     }
 
     // DATEPICKER
 
-    //$scope.datepicker = {
-    //    editor: "Umbraco.DateTime",
-    //    label: 'datepicker',
-    //    description: 'carshow datepicker',
-    //    hideLabel: false,
-    //    view: 'datepicker',
-    //    alias: 'datepicker',
-    //    value: null,
-    //    config: {
-    //        pickDate: true,
-    //        pickTime: true,
-    //        pick12HourFormat: false,
-    //        format: "YYYY-MM-DD HH:mm:ss",
-    //        icons: {
-    //            time: "icon-time",
-    //            date: "icon-calendar",
-    //            up: "icon-chevron-up",
-    //            down: "icon-chevron-down"
-    //        }
-    //    }
-    //};
-
-    $scope.StartTime = {
-        model: {
-            editor: "Umbraco.DateTime",
-            label: 'Start Time',
-            description: 'Enter the date/time the meeting will start.',
-            hideLabel: false,
-            view: "datepicker",
-            alias: 'StartTime',
-            value: "",
-            required: true,
-            validation: {
-                mandatory: true,
-                pattern: ""
-            },
-            config: {
-                format: "YYYY-MM-DD HH:mm",
-                pickDate: true,
-                pickTime: true,
-                useSeconds: false
+    $scope.datepicker = {
+        editor: "Umbraco.DateTime",
+        label: 'Carshow Datum',
+        description: 'carshow datepicker',
+        hideLabel: false,
+        view: 'datepicker',
+        alias: 'carshowdate',
+        value: null,
+        config: {
+            pickDate: true,
+            pickTime: true,
+            pick12HourFormat: false,
+            format: "YYYY-MM-DD HH:mm:ss",
+            icons: {
+                time: "icon-time",
+                date: "icon-calendar",
+                up: "icon-chevron-up",
+                down: "icon-chevron-down"
             }
         }
     };
-
 
     // MEDIAPICKER
     $scope.openMediaPicker = function () {
@@ -133,6 +96,7 @@
             submit: function (model) {
 
                 $scope.show.Image = model.selectedImages[0].id;
+                $scope.show.Imagepath = model.selectedImages[0].image;
                 $scope.selectedImageUrl = model.selectedImages[0].image;
 
                 $scope.mediaPickerOverlay.show = false;
@@ -150,7 +114,7 @@
         config: {
             editor: {
                 toolbar: ["code", "undo", "redo", "cut", "styleselect", "bold", "italic", "alignleft", "aligncenter", "alignright", "bullist", "numlist", "link", "umbmediapicker", "umbmacro", "umbembeddialog"],
-                stylesheets: [],
+                stylesheets: ["rte.css"],
                 dimensions: {}
             }
         }

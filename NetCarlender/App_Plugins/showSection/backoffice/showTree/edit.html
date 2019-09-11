@@ -31,15 +31,13 @@
 
 
                     <umb-control-group label="Beschreibung" description="Show-Beschreibung">
-                        <umb-editor model="richEditor"></umb-editor>
+                        <umb-editor model="richEditor" required></umb-editor>
                     </umb-control-group>
 
 
 
                     <umb-control-group label="Datum" description="Show-Datum">
-                        <umb-property property="StartTime.model">
-                            <umb-editor model="StartTime.model" class="ng-pristine"></umb-editor>
-                        </umb-property>
+                            <umb-editor model="datepicker" required></umb-editor>
                     </umb-control-group>
 
                     <umb-control-group label="Ort" description="Show-Ort">

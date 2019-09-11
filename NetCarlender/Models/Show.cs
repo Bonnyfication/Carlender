@@ -18,5 +18,6 @@ namespace NetCarlender.Models
         public string Strasse { get; set; }
         public int Image { get; set; }
         public string Facebook { get; set; }
+        public string Imagepath { get; set; }
     }
 }
