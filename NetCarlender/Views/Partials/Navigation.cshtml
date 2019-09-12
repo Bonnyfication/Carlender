@@ -45,10 +45,16 @@
     		            <li><a href="@site.Url" data-selector="nav a" style="">@site.Name</a></li>
     		        }
     		    }
-        			
+        			<li>
+                      <form class="form-inline search" action="/suche" method="GET">
+                        <input class="form-control mr-sm-2" type="search" name="suche" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="suche">Search</button>
+                      </form>
+                    </li>
       			</ul>
+      			
     		</div><!-- /.navbar-collapse -->
   			</div><!-- /.container -->
 		</nav>
-		
+
  		</div>

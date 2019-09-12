@@ -1,39 +1,49 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Suche>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
+@using NetCarlender.Klassen
+@using NetCarlender.Models
 @{
 	Layout = "Master.cshtml";
-	string query = Request.QueryString["search"];
-	
-	
 }
+
+
+@{
+    string searchQuery = Request.QueryString["suche"];
+    Carshow carshow;
+    List<NetCarlender.Models.Show> shows = new List<NetCarlender.Models.Show>();
+    
+    if(searchQuery != null && searchQuery != string.Empty){
+        carshow = new Carshow();
+        shows = carshow.getShowsBySearch(searchQuery);
+    }
+    
+}
+
+
+
+
+
 
     <div class="main_bg">
         <!-- start main -->
         <div class="container">
             <div class="main_grid1">
                
+               <p>Your search results for <strong>@searchQuery</strong></p>
+               
                <ul>
-                  @{ 
-                  
-                  if(query == "" || query == null)
-	                {
-	                    <h1>"Bitte geben Sie einen Suchbegiff ein!"</h1>
-	                }
-	                else
-	                {
-    	                foreach(var result in Umbraco.TypedSearch(query))
-                        {
-                            <li>
-                            <a href="@result.Url">@result.Name</a>
-                            </li>
-                        }
-	                }
-	               }
-                
+                    @foreach(var show in shows)
+                    {
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1>@show.Titel<h1>
+                            </div>
+                        </div>
+                    }
+  
                 </ul>
 
-                                   
-               
+  
             </div>
         </div>
     </div>

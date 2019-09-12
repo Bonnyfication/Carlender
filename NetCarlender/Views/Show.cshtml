@@ -1,0 +1,56 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Show>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@using NetCarlender.Klassen
+@using NetCarlender.Models
+@using System.Globalization
+@{
+	Layout = "Master.cshtml";
+}
+
+
+@{
+    string showId = Request.QueryString["id"];
+    NetCarlender.Klassen.Carshow carshow;
+    NetCarlender.Models.Show show = new NetCarlender.Models.Show();
+    
+    if(showId != null && showId != string.Empty){
+        carshow = new Carshow();
+        show = carshow.getShowById(showId);
+    }
+    
+}
+
+
+    <div class="main_bg">
+         <div id="carshow-details">
+    	<div class="container">
+    	    			
+			@if(show != null)
+			{
+    			<div class="title">
+        			<h1>@show.Titel</h1>
+        			<p style="outline: none; cursor: inherit;">@show.Datum.ToString("dddd dd MMMM yyyy, HH:mm", CultureInfo.CreateSpecificCulture("de-DE"))</p>
+    			</div>
+
+				<div class="row">
+    				<div class="col-sm-12">
+    					<div class="blog-image"><img src="@show.Imagepath" alt="Image" data-selector="img"></div>
+    					<p class="blog-meta" style="outline: none; cursor: inherit;">Datum: @show.Datum.ToString("dddd dd MMMM yyyy, HH:mm", CultureInfo.CreateSpecificCulture("de-DE"))</p>
+    					<h1 class="blog-title">The standard Lorem Ipsum passage, used since the 1500s</h1>
+    					<div class="blog-content">
+    						@Html.Raw(show.Beschreibung)
+    					</div>
+    				</div>
+    			</div>
+			}
+			else
+			{
+			    <div class="title">
+        			<h1>404 Pagenot found</h1>
+        			<p style="outline: none; cursor: inherit;">Sorry we could not find the event you were looking for :(</p>
+    			</div>
+			}
+
+    	</div>
+    </div>
+    </div>

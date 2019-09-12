@@ -13,6 +13,7 @@ namespace NetCarlender.Models
         public DateTime Datum { get; set; }
         public string Titel { get; set; }
         public string Beschreibung { get; set; }
+        public string Zusammenfassung { get; set; }
         public string Ort { get; set; }
         public string Plz { get; set; }
         public string Strasse { get; set; }

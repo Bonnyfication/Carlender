@@ -29,15 +29,16 @@
                         </umb-overlay>
                     </umb-control-group>
 
-
                     <umb-control-group label="Beschreibung" description="Show-Beschreibung">
                         <umb-editor model="richEditor" required></umb-editor>
                     </umb-control-group>
 
-
+                    <umb-control-group label="Zusammenfassung" description="Show-Zusammenfassung">
+                        <input type="text" maxlength="254" class="umb-editor umb-textstring" ng-model="show.Zusammenfassung" required />
+                    </umb-control-group>
 
                     <umb-control-group label="Datum" description="Show-Datum">
-                            <umb-editor model="datepicker" required></umb-editor>
+                        <umb-editor model="datepicker" required></umb-editor>
                     </umb-control-group>
 
                     <umb-control-group label="Ort" description="Show-Ort">

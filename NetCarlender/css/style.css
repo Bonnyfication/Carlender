@@ -14,7 +14,8 @@ body {
 }
 
 .main_bg {
-	margin-top: 50px;
+    margin-top: 50px;
+    background: #e4e4e4;
 }
 
 a {
@@ -89,6 +90,10 @@ h5 {
 
 .mt40 {
 	margin-top: 40px;
+}
+
+.mb50 {
+    margin-bottom: 50px;
 }
 
 .nopadding {
@@ -792,3 +797,371 @@ header {
 		width: 85%;
 	}
 }
+
+/* SEARCHBAR */
+.search {
+	    margin-bottom: 0;
+    margin-top: 4px;
+}
+
+.form-control {
+    border-radius: 0;
+    background: #0f1f1387;
+    border: none;
+    height: 42px;
+    color: #FFFFFF;
+    outline: none;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+	border-bottom: solid 1px #FFF;
+}
+
+
+/* carshow-display */
+#carshow-display {
+    padding: 40px 0;
+}
+
+    #carshow-display .blog-image img {
+        width: 100%;
+    }
+
+    #carshow-display .white-bg {
+        padding: 20px;
+        background: #f5f5f5;
+        box-sizing: border-box;
+    }
+
+    #carshow-display .blog-meta {
+        margin: 10px 0;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    #carshow-display .blog-title {
+        text-transform: uppercase;
+        font-size: 24px;
+        margin: 20px 0 10px 0;
+        text-align: left;
+    }
+
+    #carshow-display .blog-content p {
+        font-size: 12px;
+    }
+
+    #carshow-display .blog-tags {
+        margin-top: 30px;
+    }
+
+    #carshow-display .title {
+        margin-bottom: 40px;
+    }
+
+        #carshow-display .title p {
+            font-size: 12px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+    #carshow-display h1 {
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 0;
+        font-size: 24px;
+    }
+
+    #carshow-display .blog-sidebar input[type="text"] {
+        width: 100%;
+        padding: 5px 7px;
+        border-radius: 2px;
+        border: 1px solid #f5f5f5;
+    }
+
+    #carshow-display .blog-sidebar .text-widget {
+        margin-top: 25px;
+    }
+
+        #carshow-display .blog-sidebar .text-widget p {
+            font-size: 12px;
+        }
+
+    #carshow-display .blog-sidebar h4 {
+        margin-top: 0;
+        text-transform: uppercase;
+    }
+
+    #carshow-display .blog-sidebar-latest {
+        margin-top: 25px;
+    }
+
+        #carshow-display .blog-sidebar-latest p {
+            font-size: 11px;
+        }
+
+        #carshow-display .blog-sidebar-latest img {
+            width: 100%;
+        }
+
+    #carshow-display .blog-sidebar-pages {
+        margin-top: 25px;
+    }
+
+        #carshow-display .blog-sidebar-pages .fa {
+            margin-right: 10px;
+        }
+
+        #carshow-display .blog-sidebar-pages a {
+            font-size: 12px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+            #carshow-display .blog-sidebar-pages a:hover {
+                color: #282828;
+                margin-left: 5px;
+                -webkit-transition: all 0.5s ease;
+                -moz-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+            }
+
+    #carshow-display .blog-sidebar-tags {
+        margin-top: 25px;
+    }
+
+        #carshow-display .blog-sidebar-tags a {
+            background: #3498db;
+            color: #fff;
+            text-decoration: none;
+            font-size: 12px;
+            padding: 7px;
+            margin: 0 10px 10px 0;
+            display: inline;
+            width: auto;
+            float: left;
+        }
+
+    #carshow-display .blog-pagi {
+        text-align: center;
+    }
+
+        #carshow-display .blog-pagi .pagination .active {
+            border-radius: 0;
+            border: 1px solid #f5f5f5;
+            color: #fff;
+            background: #3498db;
+        }
+
+        #carshow-display .blog-pagi .pagination li a {
+            border-radius: 0;
+            border: 1px solid #f5f5f5;
+            color: #282828;
+            margin-left: 3px;
+            margin-right: 3px;
+        }
+
+            #carshow-display .blog-pagi .pagination li a:hover {
+                border-radius: 0;
+                border: 1px solid #f5f5f5;
+                color: #fff;
+                background: #282828;
+            }
+
+
+            /* DETAILANSICHT CARSHOW */
+#carshow-details {
+    padding: 40px 0;
+}
+
+    #carshow-details .blog-image img {
+        width: 100%;
+    }
+
+    #carshow-details .blog-meta {
+        margin: 10px 0;
+        font-size: 11px;
+    }
+
+    #carshow-details h1.blog-title {
+        text-transform: uppercase;
+        font-size: 24px;
+        margin: 20px 0 10px 0;
+        text-align: left;
+    }
+
+    #carshow-details .blog-content p {
+        font-size: 14px;
+    }
+
+    #carshow-details .blog-tags {
+        margin-top: 30px;
+        font-size: 12px;
+    }
+
+        #carshow-details .blog-tags a {
+            background: #3498db;
+            padding: 4px 8px;
+            color: #fff;
+            margin-right: 10px;
+        }
+
+    #carshow-details .title {
+        margin-bottom: 40px;
+    }
+
+        #carshow-details .title p {
+            font-size: 12px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+    #carshow-details h1 {
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 0;
+        font-size: 24px;
+    }
+
+    #carshow-details .blog-sidebar input[type="text"] {
+        width: 100%;
+        padding: 5px 7px;
+        border-radius: 2px;
+        border: 1px solid #f5f5f5;
+    }
+
+    #carshow-details .blog-sidebar .text-widget {
+        margin-top: 25px;
+    }
+
+        #carshow-details .blog-sidebar .text-widget p {
+            font-size: 12px;
+        }
+
+    #carshow-details .blog-sidebar h4 {
+        margin-top: 0;
+        text-transform: uppercase;
+    }
+
+    #carshow-details .blog-sidebar-latest {
+        margin-top: 25px;
+    }
+
+        #carshow-details .blog-sidebar-latest p {
+            font-size: 11px;
+        }
+
+        #carshow-details .blog-sidebar-latest img {
+            width: 100%;
+        }
+
+    #carshow-details .blog-sidebar-pages {
+        margin-top: 25px;
+    }
+
+        #carshow-details .blog-sidebar-pages .fa {
+            margin-right: 10px;
+        }
+
+        #carshow-details .blog-sidebar-pages a {
+            font-size: 12px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+            #carshow-details .blog-sidebar-pages a:hover {
+                color: #282828;
+                margin-left: 5px;
+                -webkit-transition: all 0.5s ease;
+                -moz-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+            }
+
+    #carshow-details .blog-sidebar-tags {
+        margin-top: 25px;
+    }
+
+        #carshow-details .blog-sidebar-tags a {
+            background: #3498db;
+            color: #fff;
+            text-decoration: none;
+            font-size: 12px;
+            padding: 7px;
+            margin: 0 10px 10px 0;
+            display: inline;
+            width: auto;
+            float: left;
+        }
+
+    #carshow-details .blog-pagi {
+        text-align: center;
+    }
+
+        #carshow-details .blog-pagi .pagination .active {
+            border-radius: 0;
+            border: 1px solid #f5f5f5;
+            color: #fff;
+            background: #3498db;
+        }
+
+        #carshow-details .blog-pagi .pagination li a {
+            border-radius: 0;
+            border: 1px solid #f5f5f5;
+            color: #282828;
+            margin-left: 3px;
+            margin-right: 3px;
+        }
+
+            #carshow-details .blog-pagi .pagination li a:hover {
+                border-radius: 0;
+                border: 1px solid #f5f5f5;
+                color: #fff;
+                background: #282828;
+            }
+
+    #carshow-details .comment-list {
+        padding-bottom: 5px;
+        margin-bottom: 30px;
+    }
+
+
+        #carshow-details .comment-list h4 img {
+            width: 60px;
+            height: 60px;
+            margin-right: 20px;
+            float: left;
+        }
+
+        #carshow-details .comment-list h4 {
+            font-size: 20px;
+        }
+
+        #carshow-details .comment-list p {
+            overflow: hidden;
+            font-size: 12px;
+        }
+
+    #carshow-details .blog-comments .comment-post {
+        padding: 20px;
+        border: 1px solid #ededed;
+    }
+
+    #carshow-details .blog-comments textarea {
+        width: 100%;
+        border-radius: 0;
+        outline: none;
+        -webkit-box-shadow: none !important;
+        -moz-box-shadow: none !important;
+        box-shadow: none !important;
+        border: 1px solid #cccccc;
+        padding: 10px;
+    }
+
+    #carshow-details .comment-list .btn-default-blue-tiny {
+        font-size: 12px;
+        padding: 4px 8px;
+    }

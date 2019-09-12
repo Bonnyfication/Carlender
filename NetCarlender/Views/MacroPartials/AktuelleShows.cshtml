@@ -1,0 +1,51 @@
+﻿@using NetCarlender.Klassen
+@using NetCarlender.Models
+@using System.Globalization
+
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+@{
+    Carshow carshow = new Carshow();
+    List<NetCarlender.Models.Show> shows = carshow.getShowsCurrent();
+    
+    if(shows != null && shows.Count() > 0)
+    {
+    
+      <div id="carshow-display">
+    	<div class="container">
+			<div class="title">
+    			<h1>Übersicht</h1>
+    			<p>Alle anstehenden Carshows im Überblick</p>
+			</div>
+			
+                @foreach(var show in shows)
+                {
+        			<div class="row mb50">
+        			    <div class="col-md-3"></div>
+        			    <div class="col-md-6">
+        			    	<div class="blog-image"><img src="@show.Imagepath" alt="Image" data-selector="img"></div>
+        			    	<div class="white-bg">
+        			    		<p class="blog-meta">Datum: @show.Datum.ToString("dddd dd MMMM yyyy, HH:mm", CultureInfo.CreateSpecificCulture("de-DE"))</p>
+        			    		<h1 class="blog-title">@show.Titel</h1>
+        			    		<div class="blog-content">
+        			    			<p>@show.Zusammenfassung</p>
+        			    			<a href="/show?id=@show.idShow" class="btn btn-default-blue-tiny" data-selector="a.btn, button.btn">zum Event</a>
+        			    		</div>
+        			    	</div>
+        			    </div>
+        			    <div class="col-md-3"></div>
+        			</div>
+
+                }
+            </div>
+        </div>
+    }
+    else
+    {
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Aktuell wurden keine Shows in der Datenbank gefunden!<h1>
+                </div>
+            </div>
+    }
+}
