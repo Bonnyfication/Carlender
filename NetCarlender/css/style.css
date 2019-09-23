@@ -972,196 +972,116 @@ header {
             }
 
 
-            /* DETAILANSICHT CARSHOW */
+/* carshow-details */
+form {margin:0 !important; }
 #carshow-details {
-    padding: 40px 0;
+	padding: 60px 0;
+	color: #282828;
 }
 
-    #carshow-details .blog-image img {
-        width: 100%;
-    }
+#carshow-details .title {
+	text-align: center;
+	width: 60%;
+	margin: 0 auto;
+}
 
-    #carshow-details .blog-meta {
-        margin: 10px 0;
-        font-size: 11px;
-    }
+#carshow-details .cover-image img {
+	max-width: 100%;
+	border-radius: 16px;
+	margin: 40px 0;
+	max-height: 450px;
+}
 
-    #carshow-details h1.blog-title {
-        text-transform: uppercase;
-        font-size: 24px;
-        margin: 20px 0 10px 0;
-        text-align: left;
-    }
+#carshow-details .icon {
+	float: left;
+	height: 80px;
+	width: 40px;
+	color: #393939;
+	font-size: 36px;
+	margin-right: 20px;
+}
 
-    #carshow-details .blog-content p {
-        font-size: 14px;
-    }
+#carshow-details .icon .fa {
+	color: #393939;
+}
 
-    #carshow-details .blog-tags {
-        margin-top: 30px;
-        font-size: 12px;
-    }
+#carshow-details .after-icon {
+	overflow: hidden;
+}
 
-        #carshow-details .blog-tags a {
-            background: #3498db;
-            padding: 4px 8px;
-            color: #fff;
-            margin-right: 10px;
-        }
+#carshow-details .after-icon h4 {
+	font-size: 24px;
+	color: #393939;
+}
 
-    #carshow-details .title {
-        margin-bottom: 40px;
-    }
+#carshow-details .after-icon p {
+    font-size: 14px;
+    color: #444444;
+    margin-bottom: 0px;
+}
 
-        #carshow-details .title p {
-            font-size: 12px;
-            text-align: center;
-            text-transform: uppercase;
-        }
+/* Kontaktformular */
+#carshow-kontakt {
+	padding: 121px 0;
+	background-position: center center;
+	background-attachment: scroll;
+	background-size: cover;
+}
 
-    #carshow-details h1 {
-        text-transform: uppercase;
-        text-align: center;
-        margin-bottom: 0;
-        font-size: 24px;
-    }
+#carshow-kontakt h3 {
+	text-transform: uppercase;
+	text-align: center;
+	margin-top: 15px;
+	color: #fff;
+}
 
-    #carshow-details .blog-sidebar input[type="text"] {
-        width: 100%;
-        padding: 5px 7px;
-        border-radius: 2px;
-        border: 1px solid #f5f5f5;
-    }
+#carshow-kontakt h3::after {
+	content: "";
+	display: block;
+	width: 40px;
+	height: 2px;
+	background-color: #62b151;
+	margin: 0 auto;
+	margin-top: 10px;
+}
 
-    #carshow-details .blog-sidebar .text-widget {
-        margin-top: 25px;
-    }
+#carshow-kontakt h6 {
+	color: #62b151;
+	text-transform: uppercase;
+	text-align: center;
+}
 
-        #carshow-details .blog-sidebar .text-widget p {
-            font-size: 12px;
-        }
+#carshow-kontakt .form-control {
+	background-color: #282828;
+	border-radius: 2px;
+	margin-bottom: 25px;
+	border: 2px solid #62b151;
+	color: #f5f5f5;
+}
 
-    #carshow-details .blog-sidebar h4 {
-        margin-top: 0;
-        text-transform: uppercase;
-    }
+#carshow-kontakt .textarea {
+	min-height: 100px;
+}
 
-    #carshow-details .blog-sidebar-latest {
-        margin-top: 25px;
-    }
+#carshow-kontakt .box {
+	text-align: center;
+}
 
-        #carshow-details .blog-sidebar-latest p {
-            font-size: 11px;
-        }
+#carshow-kontakt .box p {
+	margin: 0;
+	text-transform: uppercase;
+	font-size: 12px;
+}
 
-        #carshow-details .blog-sidebar-latest img {
-            width: 100%;
-        }
+#carshow-kontakt .box h6 {
+	margin: 10px 0 25px 0;
+	text-transform: none;
+	font-weight: bold;
+	font-size: 12px;
+	color: #282828;
+}
 
-    #carshow-details .blog-sidebar-pages {
-        margin-top: 25px;
-    }
-
-        #carshow-details .blog-sidebar-pages .fa {
-            margin-right: 10px;
-        }
-
-        #carshow-details .blog-sidebar-pages a {
-            font-size: 12px;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-            #carshow-details .blog-sidebar-pages a:hover {
-                color: #282828;
-                margin-left: 5px;
-                -webkit-transition: all 0.5s ease;
-                -moz-transition: all 0.5s ease;
-                -o-transition: all 0.5s ease;
-                transition: all 0.5s ease;
-            }
-
-    #carshow-details .blog-sidebar-tags {
-        margin-top: 25px;
-    }
-
-        #carshow-details .blog-sidebar-tags a {
-            background: #3498db;
-            color: #fff;
-            text-decoration: none;
-            font-size: 12px;
-            padding: 7px;
-            margin: 0 10px 10px 0;
-            display: inline;
-            width: auto;
-            float: left;
-        }
-
-    #carshow-details .blog-pagi {
-        text-align: center;
-    }
-
-        #carshow-details .blog-pagi .pagination .active {
-            border-radius: 0;
-            border: 1px solid #f5f5f5;
-            color: #fff;
-            background: #3498db;
-        }
-
-        #carshow-details .blog-pagi .pagination li a {
-            border-radius: 0;
-            border: 1px solid #f5f5f5;
-            color: #282828;
-            margin-left: 3px;
-            margin-right: 3px;
-        }
-
-            #carshow-details .blog-pagi .pagination li a:hover {
-                border-radius: 0;
-                border: 1px solid #f5f5f5;
-                color: #fff;
-                background: #282828;
-            }
-
-    #carshow-details .comment-list {
-        padding-bottom: 5px;
-        margin-bottom: 30px;
-    }
-
-
-        #carshow-details .comment-list h4 img {
-            width: 60px;
-            height: 60px;
-            margin-right: 20px;
-            float: left;
-        }
-
-        #carshow-details .comment-list h4 {
-            font-size: 20px;
-        }
-
-        #carshow-details .comment-list p {
-            overflow: hidden;
-            font-size: 12px;
-        }
-
-    #carshow-details .blog-comments .comment-post {
-        padding: 20px;
-        border: 1px solid #ededed;
-    }
-
-    #carshow-details .blog-comments textarea {
-        width: 100%;
-        border-radius: 0;
-        outline: none;
-        -webkit-box-shadow: none !important;
-        -moz-box-shadow: none !important;
-        box-shadow: none !important;
-        border: 1px solid #cccccc;
-        padding: 10px;
-    }
-
-    #carshow-details .comment-list .btn-default-blue-tiny {
-        font-size: 12px;
-        padding: 4px 8px;
-    }
+#carshow-kontakt .box .fa {
+	font-size: 24px;
+	color: #e74c3c;
+}

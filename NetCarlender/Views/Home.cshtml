@@ -17,7 +17,7 @@
     			<h3 style=""><span class="green">C</span>ar<span class="green">L</span>en<span class="green">D</span>er</h3>
     			<p style="">Alle Autotreffen im Überblick!</p>
 				<div class="text-center">
-					<a href="#" class="btn btn-default-green" data-selector="a.btn, button.btn">Los gehts</a>
+					<a href="#letsgo" class="btn btn-default-green" data-selector="a.btn, button.btn">Los gehts</a>
 				</div>
    				<div id="scrolldown">
   					<div class="mouse">
@@ -28,11 +28,10 @@
     </div>
 
 
-     <div class="main_bg">
+
         <!-- start main -->
         <div class="container">
-            <div class="main_grid1">
-                @CurrentPage.GetGridHtml("grid")
+            <div class="main_grid1" id="letsgo">
+                @CurrentPage.GetGridHtml("gridContent")
             </div>
         </div>
-    </div>

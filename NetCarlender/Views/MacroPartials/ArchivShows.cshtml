@@ -15,7 +15,7 @@
     	<div class="container">
 			<div class="title">
     			<h1>Übersicht</h1>
-    			<p>Alle anstehenden Carshows im Überblick</p>
+    			<p>Alle vergangenen Carshows im Überblick</p>
 			</div>
 			
                 @foreach(var show in shows)
@@ -29,7 +29,7 @@
         			    		<h1 class="blog-title">@show.Titel</h1>
         			    		<div class="blog-content">
         			    			<p>@show.Zusammenfassung</p>
-        			    			<a href="/show?id=@show.idShow" class="btn btn-default-blue-tiny" data-selector="a.btn, button.btn">zum Event</a>
+        			    			<a href="/show?id=@show.idShow" class="btn btn-default-green" data-selector="a.btn, button.btn">zum Event</a>
         			    		</div>
         			    	</div>
         			    </div>
@@ -40,12 +40,27 @@
             </div>
         </div>
     }
-    else
+   else
     {
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>Aktuell wurden keine Shows in der Datenbank gefunden!<h1>
-                </div>
-            </div>
+              <div id="carshow-display">
+    	<div class="container">
+			<div class="title">
+    			<h1>Übersicht</h1>
+    			<p>Alle anstehenden Carshows im Überblick</p>
+			</div>
+			
+            		              <div class="row mb50">
+                    			    <div class="col-md-3"></div>
+                    			    <div class="col-md-6">
+                    			    	<div class="blog-image"><img src="/media/1032/maxresdefault.jpg" alt="Image" data-selector="img"></div>
+                    			    	<div class="white-bg">
+                    			    		<h1 class="blog-title">Keine Ergebnisse -.-</h1>
+                    			    		<p>Leider gibt es hier noch keine Events die stattgefunden haben!</p>
+                    			    	</div>
+                    			    </div>
+                    			    <div class="col-md-3"></div>
+                    			</div>
+                    			            </div>
+        </div>
     }
 }

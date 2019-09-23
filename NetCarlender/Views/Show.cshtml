@@ -21,27 +21,87 @@
 }
 
 
+    
+    
     <div class="main_bg">
-         <div id="carshow-details">
+    <div id="carshow-details">
     	<div class="container">
-    	    			
-			@if(show != null)
+    	    @if(show != null)
 			{
     			<div class="title">
-        			<h1>@show.Titel</h1>
-        			<p style="outline: none; cursor: inherit;">@show.Datum.ToString("dddd dd MMMM yyyy, HH:mm", CultureInfo.CreateSpecificCulture("de-DE"))</p>
+    			    <h3>@show.Titel</h3>
+       			    <p>@show.Zusammenfassung</p>
     			</div>
-
-				<div class="row">
-    				<div class="col-sm-12">
-    					<div class="blog-image"><img src="@show.Imagepath" alt="Image" data-selector="img"></div>
-    					<p class="blog-meta" style="outline: none; cursor: inherit;">Datum: @show.Datum.ToString("dddd dd MMMM yyyy, HH:mm", CultureInfo.CreateSpecificCulture("de-DE"))</p>
-    					<h1 class="blog-title">The standard Lorem Ipsum passage, used since the 1500s</h1>
-    					<div class="blog-content">
-    						@Html.Raw(show.Beschreibung)
+       	
+       			<div class="cover-image text-center">
+       				<img src="@show.Imagepath" alt="Cover Image" data-selector="img" style="">
+       			</div>
+       			
+       			<div class="row">
+       				<div class="col-md-4">
+    					<div class="icon">
+       						<span class="fa fa-calendar" aria-hidden="true" data-selector="span.fa" style="outline: none; cursor: inherit;"></span>
     					</div>
-    				</div>
-    			</div>
+      					<div class="after-icon">
+    						<h4>WANN?</h4>
+    						<p>@show.Datum.ToString("dddd dd MMMM yyyy, HH:mm", CultureInfo.CreateSpecificCulture("de-DE"))</p>
+      					</div>
+       				</div>
+       				<div class="col-md-4">
+    					<div class="icon">
+       						<span class="fa fa-map-marker" aria-hidden="true" data-selector="span.fa" style=""></span>
+    					</div>
+      					<div class="after-icon">
+    						<h4>WO?</h4>
+    						<p>@show.Plz @show.Ort</p>
+    						<p>@show.Strasse</p>
+      					</div>
+       				</div>
+       				
+       				@if(show.Facebook != null && show?.Facebook.Length > 0)
+       				{
+           				 <div class="col-md-auto">
+        					<div class="icon">
+           						<span class="fa fa-facebook" aria-hidden="true" data-selector="span.fa" style=""></span>
+        					</div>
+          					<div class="after-icon">
+        						<h4>Facebook</h4>
+        						<p>Besuch den Veranstalter auf Facebook! <a href="@show.Facebook">Zur Veranstaltung</a></p>
+          					</div>
+           				</div>
+       				}
+
+       			</div>
+       			
+       			<div class="row">
+       			    <div class="col-md-12">
+       			        <h3>Was hat das Event zu bieten?</h3>
+       			        @Html.Raw(show.Beschreibung)
+       			    </div>
+       			</div>
+       			
+       			<div class="row">
+       			    <div class="col-md-12">
+ 
+                        @{
+                            string source = "https://maps.google.de/maps?hl=de&q=";
+                            string strasse = show.Strasse.Replace(" ","+");
+                            string stadt = show.Ort.Replace(" ","+");
+                            
+                            source += strasse;
+                            source += "%20" + show.Plz;
+                            source += "%20" + stadt;
+                            
+                            source += "&t=&z=10&ie=utf8&iwloc=b&output=embed";
+                            
+                        }
+ 
+ 
+                        <div style='height:400px;width:100%;'>
+                        	<iframe width="" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style='height:400px;width:100%;' src="@source"></iframe>
+                        </div>
+       			    </div>
+       			</div>
 			}
 			else
 			{
@@ -50,7 +110,11 @@
         			<p style="outline: none; cursor: inherit;">Sorry we could not find the event you were looking for :(</p>
     			</div>
 			}
-
     	</div>
     </div>
-    </div>
+</div>
+    
+    
+    
+    
+    

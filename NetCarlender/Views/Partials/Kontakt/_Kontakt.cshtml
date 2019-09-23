@@ -1,0 +1,44 @@
+﻿@inherits UmbracoViewPage<NetCarlender.Models.M_Kontakt>
+
+@using (Html.BeginUmbracoForm("SubmitForm", "Kontakt", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div id="carshow-kontakt" style="background-image: url('/media/1033/peter-broomfield-m3m-lnr90um-unsplash.jpg');">
+        <div class="container">
+            <h6 style="outline: none; cursor: inherit;">Kontakt</h6>
+            <h3 style="outline: none; cursor: inherit;">Informiere uns über neue events</h3>
+            <div class="row mt40 mb40">
+
+
+                <div class="form-group">
+                    @Html.ValidationSummary()
+                </div>
+
+
+                <div class="col-md-8 col-md-offset-2">
+                    <form action="#">
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(m => m.Vorname, new { @class = "form-control", placeholder = "Vorname *", required = "required" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(m => m.Nachname, new { @class = "form-control", placeholder = "Nachname *", required = "required" })
+                        </div>
+                        <div class="col-md-12">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email *", type = "email", required = "required" })
+                        </div>
+
+                        <div class="col-md-12">
+                            @Html.TextAreaFor(m => m.Nachricht, new { @class = "form-control textarea", placeholder = "Nachricht *", required = "required" })
+                        </div>
+
+                        <div class="text-center mb20">
+                            <button class="btn btn-default-green" type="submit">Absenden</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}
