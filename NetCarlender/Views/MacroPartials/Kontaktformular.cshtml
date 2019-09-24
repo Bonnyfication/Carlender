@@ -1,13 +1,17 @@
 ﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
 
 
-<div class="container">
-    @if (TempData["ContactSuccess"] != null && (bool)TempData["ContactSuccess"])
-    {
-        <p>Ihre Nachricht wurde erfolgreich versendet!</p>
-    }
-    else
-    {
-        Html.RenderAction("RenderForm", "Kontakt");
-    }
-</div>
+    <div class="container">
+        @if (TempData["ContactSuccess"] != null && (bool)TempData["ContactSuccess"])
+        {
+            <p>Ihre Nachricht wurde erfolgreich versendet!</p>
+        }
+        else if (TempData["ContactSuccess"] != null && !(bool)TempData["ContactSuccess"])
+        {
+            <p>Ihre Nachricht konnte <b>NICHT</b> erfolgreich versendet werden!</p>
+        }
+        else
+        {
+            Html.RenderAction("RenderForm", "Kontakt");
+        }
+    </div>

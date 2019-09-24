@@ -39,6 +39,7 @@
        			
        			<div class="row">
        				<div class="col-md-4">
+       				    <div class="container-details">
     					<div class="icon">
        						<span class="fa fa-calendar" aria-hidden="true" data-selector="span.fa" style="outline: none; cursor: inherit;"></span>
     					</div>
@@ -46,8 +47,10 @@
     						<h4>WANN?</h4>
     						<p>@show.Datum.ToString("dddd dd MMMM yyyy, HH:mm", CultureInfo.CreateSpecificCulture("de-DE"))</p>
       					</div>
+      						</div>
        				</div>
        				<div class="col-md-4">
+       				    <div class="container-details">
     					<div class="icon">
        						<span class="fa fa-map-marker" aria-hidden="true" data-selector="span.fa" style=""></span>
     					</div>
@@ -56,11 +59,13 @@
     						<p>@show.Plz @show.Ort</p>
     						<p>@show.Strasse</p>
       					</div>
+      					</div>
        				</div>
        				
        				@if(show.Facebook != null && show?.Facebook.Length > 0)
        				{
-           				 <div class="col-md-auto">
+           				 <div class="col-md-4">
+           				     	<div class="container-details">
         					<div class="icon">
            						<span class="fa fa-facebook" aria-hidden="true" data-selector="span.fa" style=""></span>
         					</div>
@@ -69,18 +74,19 @@
         						<p>Besuch den Veranstalter auf Facebook! <a href="@show.Facebook">Zur Veranstaltung</a></p>
           					</div>
            				</div>
+           					</div>
        				}
 
        			</div>
        			
-       			<div class="row">
+       			<div class="row mt-5">
        			    <div class="col-md-12">
        			        <h3>Was hat das Event zu bieten?</h3>
        			        @Html.Raw(show.Beschreibung)
        			    </div>
        			</div>
        			
-       			<div class="row">
+       			<div class="row mt-5">
        			    <div class="col-md-12">
  
                         @{

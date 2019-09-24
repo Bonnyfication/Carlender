@@ -55,8 +55,8 @@ h5 {
 	
 }
 
-.item {
-	
+.mt-5 {
+	margin-top: 5rem;
 }
 
 /* margins and paddings */
@@ -992,9 +992,17 @@ form {margin:0 !important; }
 	max-height: 450px;
 }
 
+#carshow-details .container-details {
+    background-color: #FFFFFF;
+    padding: 20px;
+    margin: 0;
+    border-radius: 16px;
+	margin-top: 10px;
+	min-height: 128px;
+}
+
 #carshow-details .icon {
 	float: left;
-	height: 80px;
 	width: 40px;
 	color: #393939;
 	font-size: 36px;
@@ -1012,6 +1020,7 @@ form {margin:0 !important; }
 #carshow-details .after-icon h4 {
 	font-size: 24px;
 	color: #393939;
+	margin-top: 0;
 }
 
 #carshow-details .after-icon p {

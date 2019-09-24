@@ -9,6 +9,7 @@ using Umbraco.Web.Mvc;
 
 namespace NetWebkonzepteUmbreco.Controller
 {
+
     public class KontaktController : SurfaceController
     {
         public const string PARTIAL_VIEW_FOLDER = "~/Views/Partials/Kontakt/";
@@ -24,20 +25,35 @@ namespace NetWebkonzepteUmbreco.Controller
         {
             if (ModelState.IsValid)
             {
-                SendEmail(model);
-                TempData["ContactSuccess"] = true;
+                if (SendEmail(model))
+                {
+                    TempData["ContactSuccess"] = true;
+                }
+                else
+                {
+                    TempData["ContactSuccess"] = false;
+                }
                 return RedirectToCurrentUmbracoPage();
             }
             return CurrentUmbracoPage();
         }
 
-        private void SendEmail(M_Kontakt model)
+        private bool SendEmail(M_Kontakt model)
         {
-            MailMessage message = new MailMessage(model.Email, "website@installumbraco.web.local");
-            message.Subject = string.Format("Nachricht von {0} {1} - {2}", model.Vorname, model.Nachname, model.Email);
-            message.Body = model.Nachname;
-            SmtpClient client = new SmtpClient("127.0.0.1", 25);
-            //client.Send(message);
+            try
+            {
+                MailMessage message = new MailMessage("carlender@bonnyfication.com", model.Email);
+                message.Subject = string.Format("Nachricht von {0} {1} - {2}", model.Vorname, model.Nachname, model.Email);
+                message.Body = model.Nachname;
+                SmtpClient client = new SmtpClient();
+                client.Send(message);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
             // Mit einem angebunden SMTP Server würde die E-Mail nun versendet werden
         }
     }
